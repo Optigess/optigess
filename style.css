@@ -6,12 +6,9 @@ body {
   color: #333;
 }
 .logo {
-  color: #1E90FF; /* Bleu Dodger, tu peux changer la couleur */
-  text-decoration: none; /* Enlève le soulignement du lien */
-  font-size: 2rem; /* Taille du texte */
-  font-weight: 700; /* Épaisseur du texte */
-  text-transform: none; /* Pas de transformation en majuscules */
-  font-family: 'Montserrat', sans-serif; /* Police d’écriture */
+  height: 60px; /* adapte selon ton logo */
+  width: auto;
+  display: block;
 }
 header {
   background-color: #004080;
