@@ -1,0 +1,121 @@
+/* style.css */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a.active,
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.hero {
+  background-color: #e6f0ff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #004080;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1rem;
+}
+
+form input,
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+form button {
+  margin-top: 1.5rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer a {
+  color: #004080;
+  text-decoration: none;
+}
