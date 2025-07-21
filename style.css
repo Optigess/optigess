@@ -59,7 +59,8 @@ main {
   margin-top: 1rem;
 }
 .content {
-  background-color: #fff;
+  background-color: #F9F7F5;
+  color: #5E8A75;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
