@@ -6,12 +6,12 @@ body {
   color: #333;
 }
 .logo {
-  height: 200px; /* adapte selon ton logo */
+  height: 180px; /* adapte selon ton logo */
   width: auto;
   display: block;
 }
 header {
-  background-color: #004080;
+  background-color: #F9F7F5;
   color: #fff;
   padding: 1rem 0;
 }
