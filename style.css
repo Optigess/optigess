@@ -12,7 +12,7 @@ body {
 }
 header {
   height: 210px;
-  background-color: #E9E6E1;
+  background-color: #E4E2DD;
   color: #5E8A75;
   padding: 1rem 0;
 }
@@ -31,7 +31,7 @@ nav ul {
   gap: 1rem;
 }
 nav a {
-  color: #fff;
+  color: #5E8A75;
   text-decoration: none;
   font-weight: 600;
 }
