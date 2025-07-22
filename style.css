@@ -9,8 +9,10 @@ body {
   border: 2px solid #003366; /* couleur du texte */
   border-radius: 15px;
   padding: 10px 20px;
-  display: inline-block;
+  display: flex;       /* <-- remplace inline-block par flex */
+  gap: 1rem;           /* <-- espace entre les items */
   margin-top: 15px;
+  align-items: center; /* optionnel */
 }
 .menu {
   list-style: none;
@@ -177,36 +179,40 @@ footer a {
   border: none;
   color: #003366;
   cursor: pointer;
-  margin: 0 auto 10px auto;
-  display: block;
+  margin-left: 15px;   /* <-- remplace margin auto par margin-left */
+  /* supprime display:block; car tu as display:none au-dessus */
+  position: relative;  /* pour s'assurer qu'il soit bien visible */
+  z-index: 1001;
 }
 
 /* Affichage du menu en version desktop */
 @media (min-width: 769px) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .burger {
-    display: none;
+  /* Affiche sous-menu au survol */
+  .dropdown:hover > .submenu {
+    display: block;
   }
 }
 
 /* Version mobile : burger visible, menu vertical */
 @media (max-width: 768px) {
+  .menu-wrapper {
+    flex-direction: column;
+    padding: 10px;
+    display: none; /* caché par défaut */
+  }
+
+  .menu-wrapper.open {
+    display: flex;
+  }
+
+  .submenu {
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding-left: 15px;
+  }
+
   .burger {
     display: block;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .menu.open {
-    display: flex;
   }
 }
