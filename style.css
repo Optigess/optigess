@@ -52,23 +52,20 @@ body {
   margin: 0;
   min-width: 160px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
 }
 
-.submenu li a {
-  padding: 10px;
+.dropdown.open .submenu {
   display: block;
 }
 
-/* Affichage sur hover (desktop) */
-@media (min-width: 768px) {
-  .dropdown:hover .submenu {
-    display: block;
-  }
-  .dropdown-toggle {
-    display: none; /* on cache le bouton sur grand écran */
+@media (max-width: 768px) {
+  .submenu {
+    position: static;
+    box-shadow: none;
+    background: none;
   }
 }
-
 .logo {
   height: 170px; /* adapte selon ton logo */
   width: auto;
