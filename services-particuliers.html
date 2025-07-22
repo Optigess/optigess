@@ -58,7 +58,14 @@
       <p><a href="https://www.facebook.com/OptiGess" target="_blank">Facebook</a></p>
     </div>
   </footer>
-
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const submenu = button.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
   
 </body>
 </html>
