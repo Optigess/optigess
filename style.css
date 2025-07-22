@@ -32,16 +32,6 @@ body {
   color: #003366;
 }
 
-/* Bouton déroulant (mobile) */
-.dropdown-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-  color: #003366;
-  padding: 10px 5px;
-}
-
 /* Sous-menu caché par défaut */
 .submenu {
   display: none;
@@ -55,9 +45,6 @@ body {
   min-width: 160px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-}
-.dropdown.open .submenu {
-  display: block;
 }
 
 @media (max-width: 768px) {
