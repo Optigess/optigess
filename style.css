@@ -173,10 +173,11 @@ footer a {
 
 /* Bouton burger (mobile) */
 .burger {
-  margin-left: 15px;      /* place le burger à gauche */
-  position: relative;
-  z-index: 1001;          /* devant tout */
-  display: none;          /* caché par défaut, affiché en mobile */
+  position: absolute;      /* positionné précisément */
+  top: 1rem;               /* distance depuis le haut */
+  right: 1rem;             /* collé à droite */
+  z-index: 1001;
+  display: none;           /* affiché seulement en mobile */
   font-size: 28px;
   background: none;
   border: none;
