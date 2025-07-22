@@ -177,44 +177,29 @@ footer a {
   border: none;
   color: #003366;
   cursor: pointer;
-  margin: 0 auto 10px auto; /* Centré horizontalement */
+  margin: 0 auto 10px auto;
   display: block;
 }
 
-
+/* Affichage du menu en version desktop */
+@media (min-width: 769px) {
   .menu {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .menu.open {
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 
-  .menu-wrapper {
-    border: 2px solid #003366;
-    border-radius: 15px;
-    padding: 10px;
-    display: block;
-  }
-
-  .menu li {
-    margin: 5px 0;
+  .burger {
+    display: none;
   }
 }
-/* Cacher le burger par défaut */
-.burger {
-  display: none;
-}
 
-/* Afficher le burger uniquement en-dessous de 768px */
+/* Version mobile : burger visible, menu vertical */
 @media (max-width: 768px) {
   .burger {
     display: block;
   }
 
-  /* Cacher le menu classique en mobile */
   .menu {
     display: none;
     flex-direction: column;
