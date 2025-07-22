@@ -80,7 +80,8 @@ header {
   padding: 1rem 0;
 }
 header .container {
-  width: 90%;
+ position: relative; 
+ width: 90%;
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
