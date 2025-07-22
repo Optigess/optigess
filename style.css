@@ -46,17 +46,16 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%;          /* positionné juste en dessous du parent */
+  left: 0;            /* bien aligné à gauche du bouton "Services" */
+  margin-top: 5px;    /* petit espace en-dessous */
   background-color: #f2f2f2;
   list-style: none;
   padding: 0;
-  margin: 0;
   min-width: 160px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
-
 .dropdown.open .submenu {
   display: block;
 }
