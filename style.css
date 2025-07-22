@@ -173,21 +173,19 @@ footer a {
 
 /* Bouton burger (mobile) */
 .burger {
-  display: none;
+  margin-left: 15px;      /* place le burger à gauche */
+  position: relative;
+  z-index: 1001;          /* devant tout */
+  display: none;          /* caché par défaut, affiché en mobile */
   font-size: 28px;
   background: none;
   border: none;
   color: #003366;
   cursor: pointer;
-  margin-left: 15px;   /* <-- remplace margin auto par margin-left */
-  /* supprime display:block; car tu as display:none au-dessus */
-  position: relative;  /* pour s'assurer qu'il soit bien visible */
-  z-index: 1001;
 }
 
 /* Affichage du menu en version desktop */
 @media (min-width: 769px) {
-  /* Affiche sous-menu au survol */
   .dropdown:hover > .submenu {
     display: block;
   }
@@ -198,11 +196,11 @@ footer a {
   .menu-wrapper {
     flex-direction: column;
     padding: 10px;
-    display: none; /* caché par défaut */
+    display: none;         /* caché par défaut */
   }
 
   .menu-wrapper.open {
-    display: flex;
+    display: flex;         /* affiché quand ouvert */
   }
 
   .submenu {
@@ -213,6 +211,6 @@ footer a {
   }
 
   .burger {
-    display: block;
+    display: block;        /* visible en mobile */
   }
 }
