@@ -203,3 +203,25 @@ footer a {
     margin: 5px 0;
   }
 }
+/* Cacher le burger par défaut */
+.burger {
+  display: none;
+}
+
+/* Afficher le burger uniquement en-dessous de 768px */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  /* Cacher le menu classique en mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+}
