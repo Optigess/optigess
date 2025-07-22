@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OptiGess - Services pour professionnels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="index.html" class="logo">OptiGess</a></h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li class="dropdown">
+            <a href="#">Services</a>
+            <button class="dropdown-toggle" aria-label="Ouvrir le menu Services">▼</button>
+            <ul class="submenu">
+              <li><a href="services-professionnels.html">Professionnels</a></li>
+              <li><a href="services-particuliers.html">Particuliers</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Services pour les professionnels</h2>
+    <p>OptiGess accompagne les entreprises dans leur développement stratégique et leur gestion financière.</p>
+    <ul>
+      <li>Élaboration de business plans</li>
+      <li>Diagnostic financier</li>
+      <li>Accompagnement à la création d'entreprise</li>
+      <li>Optimisation des coûts et des marges</li>
+      <li>Préparation aux levées de fonds</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OptiGess. Tous droits réservés.</p>
+      <p><a href="https://www.facebook.com/OptiGess" target="_blank">Facebook</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const submenu = button.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
