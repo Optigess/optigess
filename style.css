@@ -172,20 +172,6 @@ footer a {
   text-decoration: none;
 }
 
-/* Bouton burger (mobile) */
-.burger {
-  position: absolute;      /* positionné précisément */
-  top: 1rem;               /* distance depuis le haut */
-  right: 1rem;             /* collé à droite */
-  z-index: 1001;
-  display: none;           /* affiché seulement en mobile */
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #003366;
-  cursor: pointer;
-}
-
 /* Affichage du menu en version desktop */
 @media (min-width: 769px) {
   .submenu-toggle {
@@ -200,19 +186,6 @@ footer a {
 @media (max-width: 768px) {
   nav {
     position: relative;
-  }
-
-  .burger {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #003366;
-    z-index: 1001;
-    cursor: pointer;
   }
 
   .menu-wrapper {
