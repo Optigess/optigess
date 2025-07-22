@@ -58,29 +58,6 @@ De part son expérience personnelle et professionnelle, il comprend les besoins 
       <p><a href="https://www.facebook.com/OptiGess" target="_blank">Facebook</a></p>
     </div>
   </footer>
- <script>
-const burger = document.querySelector(".burger");
-const menu = document.querySelector(".menu-wrapper");
-
-burger.addEventListener("click", () => {
-  menu.classList.toggle("open");
-});
-
-const dropdownLink = document.querySelector(".dropdown-link");
-const dropdown = document.querySelector(".dropdown");
-
-dropdownLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  dropdown.classList.toggle("open");
-});
-
-document.addEventListener("click", () => {
-  dropdown.classList.remove("open");
-});
-
-
-</script>
 
 </body>
 </html>
