@@ -31,7 +31,9 @@ body {
   text-decoration: none;
   color: #003366;
 }
-
+.dropdown {
+  position: relative;
+}
 /* Sous-menu caché par défaut */
 .submenu {
   display: none;
