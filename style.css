@@ -5,6 +5,47 @@ body {
   background-color: #F9F7F5;
   color: #333;
 }
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #003366;
+}
+
+/* Menu déroulant */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* en dessous du lien principal */
+  left: 0;
+  background-color: #f2f2f2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.submenu li a {
+  padding: 10px;
+  color: #003366;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
 .logo {
   height: 170px; /* adapte selon ton logo */
   width: auto;
