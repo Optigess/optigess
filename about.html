@@ -68,5 +68,22 @@ De part son expérience personnelle et professionnelle, il comprend les besoins 
   });
 </script>
 
+  <script>
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".menu");
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+
+  // Gestion du sous-menu Services
+  const submenuToggle = document.querySelector(".submenu-toggle");
+  const dropdown = document.querySelector(".dropdown");
+
+  submenuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("open");
+  });
+</script>
+
 </body>
 </html>
