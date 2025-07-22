@@ -186,7 +186,10 @@ footer a {
 
 /* Affichage du menu en version desktop */
 @media (min-width: 769px) {
-  .dropdown:hover > .submenu {
+  .submenu-toggle {
+    display: none;
+  } 
+ .dropdown:hover > .submenu {
     display: block;
   }
 }
