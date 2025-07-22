@@ -5,6 +5,13 @@ body {
   background-color: #F9F7F5;
   color: #333;
 }
+.menu-wrapper {
+  border: 2px solid #003366; /* couleur du texte */
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 15px;
+}
 .menu {
   list-style: none;
   display: flex;
