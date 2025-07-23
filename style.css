@@ -175,6 +175,7 @@ footer a {
   margin-bottom: 40px;       /* espace sous la ligne */
  width: 100%;
   max-width: 1000px;
+  margin-top: 40px; /* ou 3rem, ou 40px selon l'espacement voulu */
   margin-left: auto;
   margin-right: auto;
 }
