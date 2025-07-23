@@ -172,7 +172,7 @@ footer a {
 
 .carte {
   text-align: center;        /* centre le texte sous l'image */
-  width: 120px;              /* largeur fixe pour chaque carte */
+  width: 30%; /* ← ça permet d’avoir 3 cartes côte à côte sans dépassement */
 }
 
 .carte img {
