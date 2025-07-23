@@ -120,7 +120,7 @@ main {
 }
 h2 {
   color: #39150E;         /* couleur du texte */
-  font-size: 2rem;        /* taille du titre */
+  font-size: 1.7rem;        /* taille du titre */
   font-weight: bold;      /* gras ou normal */
   text-align: center;     /* centré, ou "left" / "justify" */
   margin-top: 2rem;       /* espace au-dessus */
