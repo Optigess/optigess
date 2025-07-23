@@ -161,9 +161,13 @@ footer a {
 }
 .ligne {
   display: flex;             /* met les cartes sur une même ligne */
-  justify-content: center;   /* centre les cartes horizontalement */
+ justify-content: space-between; /* ← répartit les cartes sur toute la largeur */
   gap: 30px;                 /* espace entre les cartes */
   margin-bottom: 40px;       /* espace sous la ligne */
+ width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .carte {
