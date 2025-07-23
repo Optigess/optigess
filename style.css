@@ -118,6 +118,15 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: justify;
 }
+h2 {
+  color: #39150E;         /* couleur du texte */
+  font-size: 2rem;        /* taille du titre */
+  font-weight: bold;      /* gras ou normal */
+  text-align: center;     /* centré, ou "left" / "justify" */
+  margin-top: 2rem;       /* espace au-dessus */
+  margin-bottom: 1rem;    /* espace en dessous */
+
+}
 .services-list {
   list-style: none;
   padding: 0;
