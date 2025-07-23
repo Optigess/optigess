@@ -171,7 +171,7 @@ footer a {
 }
 
 .carte {
-  text-align: center;        /* centre le texte sous l'image */
+  text-align: justify; /* ← Justifie le texte */
   width: 30%; /* ← ça permet d’avoir 3 cartes côte à côte sans dépassement */
 }
 
