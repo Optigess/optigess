@@ -159,6 +159,25 @@ footer a {
   color: #004080;
   text-decoration: none;
 }
+.ligne {
+  display: flex;             /* met les cartes sur une même ligne */
+  justify-content: center;   /* centre les cartes horizontalement */
+  gap: 30px;                 /* espace entre les cartes */
+  margin-bottom: 40px;       /* espace sous la ligne */
+}
+
+.carte {
+  text-align: center;        /* centre le texte sous l'image */
+  width: 120px;              /* largeur fixe pour chaque carte */
+}
+
+.carte img {
+  width: 100px;              /* taille des images */
+  height: auto;              /* garde les proportions */
+  border-radius: 10px;       /* coins arrondis (optionnel) */
+  display: block;            /* enlève l'espace sous l'image */
+  margin: 0 auto 10px auto; /* centre l'image et ajoute un espace sous */
+}
 
 /* Affichage du menu en version desktop */
 @media (min-width: 769px) {
