@@ -60,18 +60,13 @@
     </div>
   </footer>
 
-  <!-- Bandeau cookies -->
-<div id="cookie-banner">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site.
-    <button id="accept-cookies">Accepter</button>
-  </p>
-</div>
-<!-- Bandeau cookies version modale avec Accepter / Refuser -->
-<div id="cookie-banner" class="cookie-modal">
-  <div class="cookie-content">
-    <p>Ce site utilise des cookies pour mesurer l’audience (Google Analytics).<br>
-    Acceptez-vous l’utilisation de ces cookies ?</p>
+ <!-- Bandeau cookies plein écran avec flou et 2 boutons -->
+<div id="cookie-banner" class="cookie-overlay">
+  <div class="cookie-box">
+    <h2>Gestion des cookies 🍪</h2>
+    <p>
+      Miam les bons cookies ! Acceptez-vous leur utilisation ? 
+    </p>
     <div class="cookie-buttons">
       <button id="accept-cookies">Accepter</button>
       <button id="reject-cookies">Refuser</button>
@@ -80,34 +75,40 @@
 </div>
 
 <style>
-  /* Fond semi-transparent plein écran */
-  .cookie-modal {
+  /* Arrière-plan flouté et sombre */
+  .cookie-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 9999;
   }
 
   /* Boîte centrale */
-  .cookie-content {
+  .cookie-box {
     background: #fff;
+    color: #333;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
-  .cookie-content p {
-    margin-bottom: 1.5rem;
+  .cookie-box h2 {
+    margin-top: 0;
+    color: #004080;
+  }
+
+  .cookie-box p {
     font-size: 1rem;
-    color: #333;
+    margin-bottom: 1.5rem;
   }
 
   .cookie-buttons {
@@ -116,27 +117,30 @@
     gap: 1rem;
   }
 
-  .cookie-content button {
-    background: #004080;
-    color: white;
+  .cookie-buttons button {
     border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
   }
 
-  .cookie-content button:hover {
-    background: #002850;
+  #accept-cookies {
+    background-color: #004080;
+    color: white;
   }
 
-  /* Bouton refuser avec un style différent */
+  #accept-cookies:hover {
+    background-color: #002850;
+  }
+
   #reject-cookies {
-    background: #666;
+    background-color: #ccc;
+    color: #333;
   }
 
   #reject-cookies:hover {
-    background: #444;
+    background-color: #aaa;
   }
 </style>
 
@@ -146,17 +150,19 @@
     const acceptBtn = document.getElementById("accept-cookies");
     const rejectBtn = document.getElementById("reject-cookies");
 
-    // Vérifie si déjà choisi
+    // Vérifie si un choix a déjà été fait
     if (!localStorage.getItem("cookiesChoice")) {
       banner.style.display = "flex";
+      document.body.style.overflow = "hidden"; // empêche le scroll
     }
 
-    // Accepter : active GA
+    // Si "Accepter" → enregistre le choix et charge Google Analytics
     acceptBtn.addEventListener("click", function () {
       localStorage.setItem("cookiesChoice", "accepted");
       banner.style.display = "none";
+      document.body.style.overflow = "auto";
 
-      // Charge Google Analytics seulement si accepté
+      // Charger Google Analytics (remplace G-XXXX par ton ID)
       let ga = document.createElement("script");
       ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
       ga.async = true;
@@ -170,10 +176,11 @@
       };
     });
 
-    // Refuser : ferme la modale sans activer GA
+    // Si "Refuser" → enregistre le choix sans rien charger
     rejectBtn.addEventListener("click", function () {
       localStorage.setItem("cookiesChoice", "rejected");
       banner.style.display = "none";
+      document.body.style.overflow = "auto";
     });
   });
 </script>
