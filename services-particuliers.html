@@ -11,15 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-68JEDZXKPC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-68JEDZXKPC');
-</script>
 </head>
 
 <body>
@@ -114,26 +106,127 @@
       });
     });
   </script>
-<!-- Bandeau cookies -->
-<div id="cookie-banner">
-  <p>
-    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site.
-    <button id="accept-cookies">Accepter</button>
-  </p>
+<!-- Bandeau cookies plein écran avec flou et 2 boutons -->
+<div id="cookie-banner" class="cookie-overlay">
+  <div class="cookie-box">
+    <h2>Gestion des cookies 🍪</h2>
+    <p>
+      Miam les bons cookies ! Acceptez-vous leur utilisation ? 
+    </p>
+    <div class="cookie-buttons">
+      <button id="accept-cookies">Accepter</button>
+      <button id="reject-cookies">Refuser</button>
+    </div>
+  </div>
 </div>
+
+<style>
+  /* Arrière-plan flouté et sombre */
+  .cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  /* Boîte centrale */
+  .cookie-box {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .cookie-box h2 {
+    margin-top: 0;
+    color: #004080;
+  }
+
+  .cookie-box p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cookie-buttons button {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  #accept-cookies {
+    background-color: #004080;
+    color: white;
+  }
+
+  #accept-cookies:hover {
+    background-color: #002850;
+  }
+
+  #reject-cookies {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  #reject-cookies:hover {
+    background-color: #aaa;
+  }
+</style>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const banner = document.getElementById("cookie-banner");
     const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
 
-    // Vérifie si l'utilisateur a déjà accepté
-    if (!localStorage.getItem("cookiesAccepted")) {
-      banner.style.display = "block";
+    // Vérifie si un choix a déjà été fait
+    if (!localStorage.getItem("cookiesChoice")) {
+      banner.style.display = "flex";
+      document.body.style.overflow = "hidden"; // empêche le scroll
     }
 
+    // Si "Accepter" → enregistre le choix et charge Google Analytics
     acceptBtn.addEventListener("click", function () {
-      localStorage.setItem("cookiesAccepted", "true");
+      localStorage.setItem("cookiesChoice", "accepted");
       banner.style.display = "none";
+      document.body.style.overflow = "auto";
+
+      // Charger Google Analytics (remplace G-XXXX par ton ID)
+      let ga = document.createElement("script");
+      ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+      ga.async = true;
+      document.head.appendChild(ga);
+
+      ga.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-68JEDZXKPC');
+      };
+    });
+
+    // Si "Refuser" → enregistre le choix sans rien charger
+    rejectBtn.addEventListener("click", function () {
+      localStorage.setItem("cookiesChoice", "rejected");
+      banner.style.display = "none";
+      document.body.style.overflow = "auto";
     });
   });
 </script>
