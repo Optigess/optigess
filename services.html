@@ -21,6 +21,7 @@
     <img src="logo.png" alt="Logo OptiGess" class="logo" />
   </a>
 </h1>
+<button class="burger" aria-label="Ouvrir le menu">☰</button>
 
   <nav>
   <ul class="menu-wrapper">
@@ -191,6 +192,22 @@
       banner.style.display = "none";
       document.body.style.overflow = "auto";
     });
+  });
+</script>
+<script>
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('nav ul.menu-wrapper');
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+
+  // Gestion du sous-menu sur mobile
+  const dropdownLink = document.querySelector('.dropdown-link');
+  dropdownLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const submenu = dropdownLink.nextElementSibling;
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
   });
 </script>
 
